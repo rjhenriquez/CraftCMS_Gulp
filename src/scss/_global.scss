@@ -1,0 +1,9 @@
+body {
+	@include font-book;
+	@include color-dark-on-light($black);
+	font-size: 62.5%; //Making EM's base 10px
+}
+::selection {
+	background: red;
+
+}

@@ -1,0 +1,118 @@
+@font-face{
+	font-family: 'AvenirBold';
+	src: url('/fonts/AvenirLT-Black.eot');
+	src: url('/fonts/AvenirLT-Black.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/AvenirLT-Black.woff') format('woff'),
+		url('/fonts/AvenirLT-Black.ttf') format('truetype'),
+		url('/fonts/AvenirLT-Black.svg#AvenirLT-Black') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'AvenirMedium';
+	src: url('/fonts/AvenirLT-Medium.eot');
+	src: url('/fonts/AvenirLT-Medium.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/AvenirLT-Medium.woff') format('woff'),
+		url('/fonts/AvenirLT-Medium.ttf') format('truetype'),
+		url('/fonts/AvenirLT-Medium.svg#AvenirLT-Medium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'AvenirBook';
+	src: url('/fonts/AvenirLT-Book.eot');
+	src: url('/fonts/AvenirLT-Book.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/AvenirLT-Book.woff') format('woff'),
+		url('/fonts/AvenirLT-Book.ttf') format('truetype'),
+		url('/fonts/AvenirLT-Book.svg#AvenirLT-Book') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin font-medium($important: '') {
+	font-family: 'AvenirMedium', sans-serif unquote($important);
+	font-weight: normal unquote($important);
+}
+
+@mixin font-book($important: '') {
+	font-family: 'AvenirBook', sans-serif unquote($important);
+	font-weight: normal unquote($important);
+}
+
+@mixin font-bold($important: '') {
+	font-family: 'AvenirBold', sans-serif unquote($important);
+	font-weight: normal unquote($important);
+}
+
+
+@mixin color-dark-on-light($color, $important: '') {
+	color: $color unquote($important);
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: auto;
+	text-rendering: optimizeLegibility;
+}
+
+@mixin color-light-on-dark($color, $important: '') {
+	color: $color unquote($important);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
+}
+
+h1 {
+	@include font-medium;
+	font-size: 2.5em;
+	line-height: 1.4;
+	@media #{$medium-up} {
+		font-size: 3.2em;
+	}
+	@media #{$large-up} {
+		font-size: 4em;
+	}
+}
+
+h2 {
+	@include font-medium;
+	font-size: 2.2em;
+	line-height: 1.6;
+	@media #{$medium-up} {
+		font-size: 2.8em;
+	}
+	@media #{$large-up} {
+		font-size: 3.2em;
+	}
+}
+h3 {
+	@include font-medium;
+	letter-spacing: .05em;
+	line-height: 1.6;
+	margin-bottom: .3em;
+	font-size: 2em;
+	@media #{$medium-up} {
+		font-size: 2.2em;
+	}
+}
+h4 {
+	text-transform: uppercase;
+	font-size: 1.2em;
+	@include font-medium;
+}
+h5 {
+	font-size: 1.6em;
+	@media #{$medium-up} {
+		font-size: 1.8em;
+	}
+	@media #{$large-up} {
+		font-size: 2em;
+	}
+}
+h6 {
+	font-size: 2em;
+}
+p, li, address {
+	font-size: 1.8em;
+	line-height: 1.4;
+}
